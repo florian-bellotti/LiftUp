@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		APP001 /* LiftUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC001 /* LiftUpApp.swift */; };
+		APP002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRC002 /* ContentView.swift */; };
+		APP003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = RES001 /* Assets.xcassets */; };
+		CP001 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCCP001 /* GlassCard.swift */; };
+		CP002 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCCP002 /* ProgressRing.swift */; };
+		DT001 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCDT001 /* SeedData.swift */; };
+		EX001 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCEX001 /* Color+Extensions.swift */; };
+		EX002 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCEX002 /* View+Extensions.swift */; };
+		MOD001 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD001 /* Exercise.swift */; };
+		MOD002 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD002 /* WorkoutSession.swift */; };
+		MOD003 /* WeekProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD003 /* WeekProgram.swift */; };
+		MOD004 /* ExerciseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD004 /* ExerciseSet.swift */; };
+		MOD005 /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD005 /* SessionType.swift */; };
+		MOD006 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD006 /* TimerActivityAttributes.swift */; };
+		RP001 /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCRP001 /* WorkoutRepository.swift */; };
+		RP002 /* ExerciseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCRP002 /* ExerciseRepository.swift */; };
+		SV001 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCSV001 /* DataService.swift */; };
+		SV002 /* ProgressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCSV002 /* ProgressionService.swift */; };
+		SV003 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCSV003 /* SyncService.swift */; };
+		SV004 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCSV004 /* LiveActivityManager.swift */; };
+		VM001 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVM001 /* WorkoutViewModel.swift */; };
+		VM002 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVM002 /* SessionViewModel.swift */; };
+		VM003 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVM003 /* TimerViewModel.swift */; };
+		VW001 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW001 /* HomeView.swift */; };
+		VW002 /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW002 /* ProgramView.swift */; };
+		VW003 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW003 /* SessionView.swift */; };
+		VW004 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW004 /* ExerciseView.swift */; };
+		VW005 /* SessionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW005 /* SessionSummaryView.swift */; };
+		VW006 /* ProgramEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW006 /* ProgramEditorView.swift */; };
+		VW007 /* ExerciseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW007 /* ExerciseRowView.swift */; };
+		VW008 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW008 /* TimerView.swift */; };
+		VW009 /* SetInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW009 /* SetInputView.swift */; };
+		VW010 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW010 /* HistoryView.swift */; };
+		VW011 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCVW011 /* StatsView.swift */; };
+		WGT001 /* LiftUpWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCWGT001 /* LiftUpWidgetsBundle.swift */; };
+		WGT002 /* TimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCWGT002 /* TimerLiveActivity.swift */; };
+		WGT003 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = SRCMOD006 /* TimerActivityAttributes.swift */; };
+		WGT004 /* LiftUpWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = PRDWGT /* LiftUpWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		PRXWGT /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = PRJ001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = TGTWGT;
+			remoteInfo = LiftUpWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CPYWGT /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				WGT004 /* MuscuTrackWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		PRD001 /* LiftUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		PRDWGT /* LiftUpWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiftUpWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		RES001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		SRC001 /* LiftUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftUpApp.swift; sourceTree = "<group>"; };
+		SRC002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		SRCCP001 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		SRCCP002 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		SRCDT001 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		SRCEX001 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		SRCEX002 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		SRCMOD001 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		SRCMOD002 /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
+		SRCMOD003 /* WeekProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekProgram.swift; sourceTree = "<group>"; };
+		SRCMOD004 /* ExerciseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSet.swift; sourceTree = "<group>"; };
+		SRCMOD005 /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
+		SRCMOD006 /* TimerActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActivityAttributes.swift; sourceTree = "<group>"; };
+		SRCRP001 /* WorkoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepository.swift; sourceTree = "<group>"; };
+		SRCRP002 /* ExerciseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepository.swift; sourceTree = "<group>"; };
+		SRCSV001 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		SRCSV002 /* ProgressionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionService.swift; sourceTree = "<group>"; };
+		SRCSV003 /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		SRCSV004 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		SRCVM001 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		SRCVM002 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		SRCVM003 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		SRCVW001 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		SRCVW002 /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
+		SRCVW003 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		SRCVW004 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		SRCVW005 /* SessionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSummaryView.swift; sourceTree = "<group>"; };
+		SRCVW006 /* ProgramEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramEditorView.swift; sourceTree = "<group>"; };
+		SRCVW007 /* ExerciseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRowView.swift; sourceTree = "<group>"; };
+		SRCVW008 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		SRCVW009 /* SetInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetInputView.swift; sourceTree = "<group>"; };
+		SRCVW010 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		SRCVW011 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		SRCWGT001 /* LiftUpWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftUpWidgetsBundle.swift; sourceTree = "<group>"; };
+		SRCWGT002 /* TimerLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLiveActivity.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FRM001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FRMWGT /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GRP000 = {
+			isa = PBXGroup;
+			children = (
+				GRP001 /* LiftUp */,
+				GRPWGT /* LiftUpWidgets */,
+				GRPPRD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GRP001 /* LiftUp */ = {
+			isa = PBXGroup;
+			children = (
+				SRC001 /* LiftUpApp.swift */,
+				SRC002 /* ContentView.swift */,
+				GRP002 /* Models */,
+				GRP003 /* Views */,
+				GRP004 /* ViewModels */,
+				GRP005 /* Services */,
+				GRP006 /* Repositories */,
+				GRP007 /* Extensions */,
+				GRP008 /* Components */,
+				GRP009 /* Resources */,
+			);
+			path = LiftUp;
+			sourceTree = "<group>";
+		};
+		GRP002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				SRCMOD001 /* Exercise.swift */,
+				SRCMOD002 /* WorkoutSession.swift */,
+				SRCMOD003 /* WeekProgram.swift */,
+				SRCMOD004 /* ExerciseSet.swift */,
+				SRCMOD005 /* SessionType.swift */,
+				SRCMOD006 /* TimerActivityAttributes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GRP003 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				SRCVW001 /* HomeView.swift */,
+				SRCVW002 /* ProgramView.swift */,
+				SRCVW003 /* SessionView.swift */,
+				SRCVW004 /* ExerciseView.swift */,
+				SRCVW005 /* SessionSummaryView.swift */,
+				SRCVW006 /* ProgramEditorView.swift */,
+				SRCVW007 /* ExerciseRowView.swift */,
+				SRCVW008 /* TimerView.swift */,
+				SRCVW009 /* SetInputView.swift */,
+				SRCVW010 /* HistoryView.swift */,
+				SRCVW011 /* StatsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GRP004 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				SRCVM001 /* WorkoutViewModel.swift */,
+				SRCVM002 /* SessionViewModel.swift */,
+				SRCVM003 /* TimerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		GRP005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				SRCSV001 /* DataService.swift */,
+				SRCSV002 /* ProgressionService.swift */,
+				SRCSV003 /* SyncService.swift */,
+				SRCSV004 /* LiveActivityManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GRP006 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				SRCRP001 /* WorkoutRepository.swift */,
+				SRCRP002 /* ExerciseRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		GRP007 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				SRCEX001 /* Color+Extensions.swift */,
+				SRCEX002 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		GRP008 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				SRCCP001 /* GlassCard.swift */,
+				SRCCP002 /* ProgressRing.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		GRP009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				RES001 /* Assets.xcassets */,
+				SRCDT001 /* SeedData.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GRPPRD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				PRD001 /* LiftUp.app */,
+				PRDWGT /* LiftUpWidgetsExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		GRPWGT /* LiftUpWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				SRCWGT001 /* LiftUpWidgetsBundle.swift */,
+				SRCWGT002 /* TimerLiveActivity.swift */,
+			);
+			path = LiftUpWidgets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TGT001 /* LiftUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCL001 /* Build configuration list for PBXNativeTarget "LiftUp" */;
+			buildPhases = (
+				SRC000 /* Sources */,
+				FRM001 /* Frameworks */,
+				RSC001 /* Resources */,
+				CPYWGT /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEPWGT /* PBXTargetDependency */,
+			);
+			name = LiftUp;
+			productName = LiftUp;
+			productReference = PRD001 /* LiftUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		TGTWGT /* LiftUpWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCLWGT /* Build configuration list for PBXNativeTarget "LiftUpWidgetsExtension" */;
+			buildPhases = (
+				SRCWGT /* Sources */,
+				FRMWGT /* Frameworks */,
+				RSCWGT /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiftUpWidgetsExtension;
+			productName = LiftUpWidgetsExtension;
+			productReference = PRDWGT /* LiftUpWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PRJ001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					TGT001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					TGTWGT = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = BCL000 /* Build configuration list for PBXProject "MuscuTrack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = fr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = GRP000;
+			productRefGroup = GRPPRD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TGT001 /* LiftUp */,
+				TGTWGT /* LiftUpWidgetsExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RSC001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RSCWGT /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SRC000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP001 /* MuscuTrackApp.swift in Sources */,
+				APP002 /* ContentView.swift in Sources */,
+				MOD001 /* Exercise.swift in Sources */,
+				MOD002 /* WorkoutSession.swift in Sources */,
+				MOD003 /* WeekProgram.swift in Sources */,
+				MOD004 /* ExerciseSet.swift in Sources */,
+				MOD005 /* SessionType.swift in Sources */,
+				MOD006 /* TimerActivityAttributes.swift in Sources */,
+				VW001 /* HomeView.swift in Sources */,
+				VW002 /* ProgramView.swift in Sources */,
+				VW003 /* SessionView.swift in Sources */,
+				VW004 /* ExerciseView.swift in Sources */,
+				VW005 /* SessionSummaryView.swift in Sources */,
+				VW006 /* ProgramEditorView.swift in Sources */,
+				VW007 /* ExerciseRowView.swift in Sources */,
+				VW008 /* TimerView.swift in Sources */,
+				VW009 /* SetInputView.swift in Sources */,
+				VW010 /* HistoryView.swift in Sources */,
+				VW011 /* StatsView.swift in Sources */,
+				VM001 /* WorkoutViewModel.swift in Sources */,
+				VM002 /* SessionViewModel.swift in Sources */,
+				VM003 /* TimerViewModel.swift in Sources */,
+				SV001 /* DataService.swift in Sources */,
+				SV002 /* ProgressionService.swift in Sources */,
+				SV003 /* SyncService.swift in Sources */,
+				SV004 /* LiveActivityManager.swift in Sources */,
+				RP001 /* WorkoutRepository.swift in Sources */,
+				RP002 /* ExerciseRepository.swift in Sources */,
+				EX001 /* Color+Extensions.swift in Sources */,
+				EX002 /* View+Extensions.swift in Sources */,
+				CP001 /* GlassCard.swift in Sources */,
+				CP002 /* ProgressRing.swift in Sources */,
+				DT001 /* SeedData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SRCWGT /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				WGT001 /* MuscuTrackWidgetsBundle.swift in Sources */,
+				WGT002 /* TimerLiveActivity.swift in Sources */,
+				WGT003 /* TimerActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEPWGT /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = TGTWGT /* LiftUpWidgetsExtension */;
+			targetProxy = PRXWGT /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CFG001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFG002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFG003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = PFZ58P36P5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LiftUp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftup.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CFG004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = PFZ58P36P5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LiftUp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftup.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CFGWGT001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFZ58P36P5;
+				INFOPLIST_FILE = LiftUpWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftup.app.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CFGWGT002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFZ58P36P5;
+				INFOPLIST_FILE = LiftUpWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftup.app.widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCL000 /* Build configuration list for PBXProject "MuscuTrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFG001 /* Debug */,
+				CFG002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCL001 /* Build configuration list for PBXNativeTarget "LiftUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFG003 /* Debug */,
+				CFG004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCLWGT /* Build configuration list for PBXNativeTarget "LiftUpWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFGWGT001 /* Debug */,
+				CFGWGT002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PRJ001 /* Project object */;
+}
