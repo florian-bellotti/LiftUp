@@ -32,7 +32,9 @@ struct SessionView: View {
                 exerciseList
 
                 // Bottom action
-                if let exercise = viewModel.currentExercise {
+                if viewModel.allExercisesCompleted {
+                    completeSessionBar
+                } else if let exercise = viewModel.currentExercise {
                     bottomActionBar(exercise: exercise)
                 }
             }
@@ -273,6 +275,67 @@ struct SessionView: View {
                         .frame(width: 44, height: 44)
                         .background(Color.appPrimary)
                         .clipShape(Circle())
+                }
+                .padding(12)
+                .background(Color.cardSurface)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: .black.opacity(0.1), radius: 16, x: 0, y: -4)
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 20)
+            .padding(.bottom, 20)
+        }
+        .background(
+            LinearGradient(
+                colors: [Color.appBackground.opacity(0), Color.appBackground],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 60)
+            .offset(y: -60)
+            .allowsHitTesting(false),
+            alignment: .top
+        )
+    }
+
+    private var completeSessionBar: some View {
+        VStack(spacing: 0) {
+            Button {
+                viewModel.completeSession()
+            } label: {
+                HStack(spacing: 12) {
+                    // Success icon
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(Color.success)
+                            .frame(width: 44, height: 44)
+
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 20))
+                            .foregroundStyle(.white)
+                    }
+
+                    // Text
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Séance terminée !")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.primary)
+
+                        Text("\(viewModel.completedExerciseCount) exercices complétés")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer()
+
+                    // Complete button
+                    Text("Terminer")
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                        .background(Color.success)
+                        .clipShape(Capsule())
                 }
                 .padding(12)
                 .background(Color.cardSurface)

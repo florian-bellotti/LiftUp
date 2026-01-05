@@ -195,7 +195,9 @@ struct ExerciseView: View {
     private var inputView: some View {
         VStack(spacing: 24) {
             // Previous session badge
-            if let prev = previousSet {
+            if viewModel.isLoadingPreviousSession {
+                loadingPreviousBadge
+            } else if let prev = previousSet {
                 previousBadge(prev)
             }
 
@@ -240,6 +242,23 @@ struct ExerciseView: View {
         .padding(.horizontal, 20)
     }
 
+    private var loadingPreviousBadge: some View {
+        HStack(spacing: 8) {
+            ProgressView()
+                .scaleEffect(0.8)
+
+            Text("Chargement dernière séance...")
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(.secondary)
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+        .background {
+            Capsule()
+                .fill(Color.secondary.opacity(0.1))
+        }
+    }
+
     private func previousBadge(_ prevSet: ExerciseSet) -> some View {
         HStack(spacing: 8) {
             Image(systemName: "clock.arrow.circlepath")
@@ -277,7 +296,7 @@ struct ExerciseView: View {
     // MARK: - Timer View
 
     private var timerView: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 32) {
             // Timer ring
             ZStack {
                 // Background ring
@@ -297,16 +316,28 @@ struct ExerciseView: View {
                     .animation(.linear(duration: 1), value: viewModel.timerSeconds)
 
                 // Center content
-                VStack(spacing: 8) {
+                VStack(spacing: 6) {
                     Text(viewModel.timerDisplay)
-                        .font(.system(size: 56, weight: .bold, design: .rounded))
+                        .font(.system(size: 52, weight: .bold, design: .rounded))
                         .foregroundStyle(.primary)
                         .monospacedDigit()
 
                     Text("REPOS")
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                         .foregroundStyle(.secondary)
-                        .tracking(3)
+                        .tracking(2)
+
+                    // Prochaine série - données de la dernière fois
+                    if let prev = previousSet {
+                        HStack(spacing: 4) {
+                            Image(systemName: "arrow.right.circle.fill")
+                                .font(.system(size: 10))
+                            Text("\(prev.reps) × \(formatWeight(prev.weight))kg")
+                                .font(.system(size: 13, weight: .semibold, design: .rounded))
+                        }
+                        .foregroundStyle(sessionColor)
+                        .padding(.top, 4)
+                    }
                 }
             }
 
@@ -477,7 +508,7 @@ private struct ProgressPill: View {
             if isCompleted {
                 Image(systemName: "checkmark")
                     .font(.system(size: 10, weight: .bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.white.opacity(0.9))
             } else {
                 Text("\(index + 1)")
                     .font(.system(size: 13, weight: .bold, design: .rounded))
@@ -489,13 +520,23 @@ private struct ProgressPill: View {
             Circle()
                 .fill(backgroundColor)
         }
-        .scaleEffect(isCurrent ? 1.1 : 1.0)
+        .overlay {
+            // Anneau blanc pour la série en cours
+            if isCurrent {
+                Circle()
+                    .strokeBorder(.white, lineWidth: 3)
+                    .shadow(color: accentColor.opacity(0.5), radius: 4, x: 0, y: 0)
+            }
+        }
+        .scaleEffect(isCurrent ? 1.15 : 1.0)
         .animation(.spring(response: 0.3), value: isCurrent)
     }
 
     private var backgroundColor: Color {
-        if isCompleted || isCurrent {
+        if isCurrent {
             return accentColor
+        } else if isCompleted {
+            return accentColor.opacity(0.5)
         } else {
             return Color.secondary.opacity(0.12)
         }
@@ -602,10 +643,6 @@ private struct NumberInputSheet: View {
         VStack(spacing: 24) {
             // Header
             HStack {
-                Button("Annuler") { dismiss() }
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(.secondary)
-
                 Spacer()
 
                 VStack(spacing: 2) {
@@ -621,15 +658,15 @@ private struct NumberInputSheet: View {
                 }
 
                 Spacer()
-
-                Button("OK") {
-                    if let newValue = Double(inputString) {
-                        value = newValue
-                    }
+            }
+            .overlay(alignment: .trailing) {
+                Button {
                     dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 28))
+                        .foregroundStyle(.secondary.opacity(0.5))
                 }
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(accentColor)
             }
             .padding(.horizontal, 24)
             .padding(.top, 20)
@@ -685,6 +722,14 @@ private struct NumberInputSheet: View {
                 } else {
                     inputString = String(Int(value))
                 }
+            }
+        }
+        .onChange(of: inputString) { _, newValue in
+            // Mise à jour en temps réel
+            if let newDouble = Double(newValue) {
+                value = newDouble
+            } else if newValue.isEmpty {
+                value = 0
             }
         }
     }

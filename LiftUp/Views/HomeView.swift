@@ -73,10 +73,47 @@ struct HomeView: View {
         Group {
             if viewModel.hasActiveWorkout {
                 activeSessionCard
-            } else if let todaySession = viewModel.todaySession {
+            } else if let todaySession = viewModel.todaySession,
+                      let todayType = viewModel.todaySessionType,
+                      !viewModel.isSessionCompleted(todayType) {
                 todaySessionCard(todaySession)
+            } else if let todayType = viewModel.todaySessionType,
+                      viewModel.isSessionCompleted(todayType) {
+                sessionCompletedCard(todayType)
             } else {
                 restDayCard
+            }
+        }
+    }
+
+    // MARK: - Session Completed Card
+
+    private func sessionCompletedCard(_ sessionType: SessionType) -> some View {
+        let color = Color.forSessionType(sessionType)
+
+        return iOS26CardView(cornerRadius: 20, padding: 20) {
+            HStack(spacing: 16) {
+                ZStack {
+                    Circle()
+                        .fill(color.opacity(0.15))
+                        .frame(width: 56, height: 56)
+
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 28))
+                        .foregroundStyle(color)
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Séance terminée")
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+
+                    Text("\(sessionType.displayName) complété")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
             }
         }
     }

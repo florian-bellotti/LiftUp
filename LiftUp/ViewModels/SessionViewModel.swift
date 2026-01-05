@@ -14,6 +14,7 @@ final class SessionViewModel: ObservableObject {
     @Published var showingExerciseDetail = false
     @Published var showingSummary = false
     @Published var showingCancelConfirmation = false
+    @Published var isLoadingPreviousSession = false
 
     // MARK: - Timer
 
@@ -51,6 +52,10 @@ final class SessionViewModel: ObservableObject {
         currentExerciseIndex >= exerciseCount - 1
     }
 
+    var allExercisesCompleted: Bool {
+        completedExerciseCount == exerciseCount && exerciseCount > 0
+    }
+
     var canGoNext: Bool {
         currentExerciseIndex < exerciseCount - 1
     }
@@ -74,10 +79,12 @@ final class SessionViewModel: ObservableObject {
     // MARK: - Lifecycle
 
     func loadPreviousSession() async {
+        isLoadingPreviousSession = true
         previousSession = try? await dataService.workoutRepository.getPreviousSession(
             forType: session.sessionType,
             before: session.startedAt
         )
+        isLoadingPreviousSession = false
     }
 
     // MARK: - Navigation
